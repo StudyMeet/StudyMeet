@@ -1,12 +1,16 @@
 import React from 'react'
+import { Whiteboard } from './components/Whiteboard'
 import "./styles.css"
 
 const App = () => {
   return (
-    <h1 className="btn">
-      Create React App Without Olivier ☘️
-    </h1>
-  )
+    <div>
+      <h1 className="btn">
+        Create React App Without Olivier ☘️
+      </h1>
+      <Whiteboard />
+    </div>
+  );
 }
 
 export default App
