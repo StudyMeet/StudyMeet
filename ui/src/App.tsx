@@ -1,9 +1,10 @@
 import React from 'react'
+import "./styles.css"
 
 const App = () => {
   return (
-    <h1>
-     Create React App Without CRA ☘️
+    <h1 className="btn">
+      Create React App Without Olivier ☘️
     </h1>
   )
 }
