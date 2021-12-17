@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'jit',
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: [],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
   },
