@@ -1,22 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css';
+import { ChatLayout } from './layouts';
 
-import { ChatMessage } from './features/ChatMessage';
-import { Message } from './types';
-
-const testMsg: Message = {
-    user: {
-        email: 'no.reply@studymeet.com',
-        firstName: 'Olivier',
-        lastName: 'Goulet'
-    },
-    content: 'Hello, world!',
-    timestamp: new Date() 
-}
-
-const tree = <div>
-    <ChatMessage message={testMsg}/>
+const tree = <div className='h-screen'>
+    <ChatLayout>
+    </ChatLayout>
 </div>
 
 ReactDOM.render(tree, document.querySelector('#root'));

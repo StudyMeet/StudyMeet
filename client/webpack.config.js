@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = [
   {
@@ -27,6 +28,10 @@ module.exports = [
     },
     resolve: {
       extensions: [ '.tsx', '.ts', '.js' ],
+      plugins: [new TsconfigPathsPlugin({})],
+      alias: {
+        features: path.resolve(__dirname, 'src/features/')
+      }
     },
     output: {
       filename: 'bundle.js',

@@ -23,8 +23,17 @@
       "experimentalDecorators": true,
       "resolveJsonModule": true,
       "baseUrl": ".",
-      "jsx": "react"
+      "jsx": "react",
+      "paths": {
+        "@components": ["./src/components"],
+        "@features": ["./src/features"],
+        "@hooks": ["./src/hooks"],
+        "@layouts": ["./src/layouts"],
+        "@pages": ["./src/pages"],
+        "@utils": ["./src/utils"],
+        "@types": ["./src/types"]
+      }
   },
   "exclude": ["node_modules"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
 }

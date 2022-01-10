@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .sm-active-tab {
+        @apply bg-red-300/50 dark:bg-red-700/25 text-red-500 dark:text-red-300 px-3 py-1.5 rounded-md
+    }
+
+    .sm-tab {
+        @apply px-3 py-1.5 rounded-md dark:text-gray-400
+    }
+}

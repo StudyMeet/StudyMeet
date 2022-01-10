@@ -9,7 +9,7 @@ interface Props {
 
 export function UIChatMessage({ message }: Props) {
     return (
-        <div className='flex w-full m-3'>
+        <div className='flex w-full py-3 px-5 hover:dark:bg-gray-900/25'>
             <div className='w-10 mr-3 cursor-pointer'>
                 <Avatar avatarLocation={message.user.avatarLocation}/>
             </div>
