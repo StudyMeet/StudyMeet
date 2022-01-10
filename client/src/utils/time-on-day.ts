@@ -9,6 +9,7 @@ import { clockFormat } from "../constants";
  * The function will return `Today at 5:00 PM`.
 */
 export function timeOnDay(timestamp: Date) {
+    console.log(clockFormat);
     const now = new Date();
     let day: string | undefined;
 
@@ -35,5 +36,6 @@ export function timeOnDay(timestamp: Date) {
     }
 
     // dd/mm/yyyy format
+    console.log(timestamp.getDate());
     return `${String(timestamp.getDate()).padStart(2,'0')}/${String(timestamp.getMonth()+1).padStart(2,'0')}/${timestamp.getFullYear()}`;
 }
