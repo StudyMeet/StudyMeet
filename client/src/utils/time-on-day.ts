@@ -28,11 +28,16 @@ export function timeOnDay(timestamp: Date) {
     }
 
     if (day) {
-        const timeSuffix = timestamp.getMinutes() >= 12 ? 'PM' : 'AM';
+        const timeSuffix = timestamp.getHours() >= 12 ? 'PM' : 'AM';
         
-        return clockFormat === '24h' 
-            ? `${day} at ${timestamp.getHours()}:${timestamp.getMinutes()}`
-            : `${day} at ${timestamp.getHours() % 12}:${timestamp.getMinutes()} ${timeSuffix}`; 
+        if (clockFormat === '24h') {
+            return `${day} at ${timestamp.getHours()}:${timestamp.getMinutes()}`;
+        } else {
+            let hour = timestamp.getHours() % 12;
+            if (hour === 0) hour = 12;
+
+            return `${day} at ${String(hour).padStart(2, "0")}:${String(timestamp.getMinutes()).padStart(2, "0")} ${timeSuffix}`;
+        }
     }
 
     // dd/mm/yyyy format
