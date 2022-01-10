@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css';
 
-import { ChatMessage } from './components/ChatMessage';
+import { ChatMessage } from './features/ChatMessage';
 import { Message } from './types';
 
 const testMsg: Message = {
@@ -12,7 +12,7 @@ const testMsg: Message = {
         lastName: 'Goulet'
     },
     content: 'Hello, world!',
-    timestamp: 'Today at 3:13 PM'
+    timestamp: new Date() 
 }
 
 const tree = <div>

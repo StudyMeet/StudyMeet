@@ -8,5 +8,5 @@ export interface User {
 export interface Message {
     user: User;
     content: string;
-    timestamp: string;
+    timestamp: Date;
 }
