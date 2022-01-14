@@ -10,4 +10,8 @@
     .sm-tab {
         @apply px-3 py-1.5 rounded-md dark:text-gray-400
     }
+
+    .sm-tooltip-menu {
+        @apply p-1 cursor-pointer dark:text-gray-200 hover:dark:bg-gray-900 first:rounded-l-md last:rounded-r-md
+    }
 }
