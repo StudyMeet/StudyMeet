@@ -2,14 +2,26 @@ import React from 'react';
 import { Message } from '../../types';
 import { Avatar } from '../../components/Avatar';
 import { timeOnDay } from '../../utils/time-on-day';
+import { useState } from 'react';
+import { ChatMessageMenu } from '../ChatMessageMenu';
 
 interface Props {
     message: Message;
 }
 
 export function UIChatMessage({ message }: Props) {
+    const [hover, setHover] = useState(false);
+    
+    const onMouseEnter = () => {
+        setHover(true);
+    }
+
+    const onMouseLeave = () => {
+        setHover(false);
+    }
+
     return (
-        <div className='flex w-full py-3 px-5 hover:dark:bg-gray-900/25'>
+        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='flex w-full py-3 px-5 hover:dark:bg-gray-900/25'>
             <div className='w-10 mr-3 cursor-pointer'>
                 <Avatar avatarLocation={message.user.avatarLocation}/>
             </div>
@@ -22,6 +34,7 @@ export function UIChatMessage({ message }: Props) {
                     {message.content}
                 </div>
             </div>
+            { hover && <ChatMessageMenu /> }
         </div>
     )
 }
