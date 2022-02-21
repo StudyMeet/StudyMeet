@@ -9,11 +9,11 @@ interface Props {
 
 export function ChatLayout({ children }: PropsWithChildren<Props>) {
     return (
-        <div className='flex h-full'>
+        <div className='flex h-screen overflow-hidden'>
             <div className='flex-grow dark:bg-gray-900'>
                 { children }
             </div>
-            <div className='dark:bg-gray-800 w-96 flex-none rounded-l-xl'>
+            <div className='dark:bg-gray-800 w-96 flex flex-col h-full rounded-l-xl'>
                 <div className='flex text-sm justify-between align-baseline m-6'>
                     <p className='font-semibold dark:text-gray-500'>Group Chat</p>
                     <div className='flex space-x-2'>
@@ -23,7 +23,9 @@ export function ChatLayout({ children }: PropsWithChildren<Props>) {
                         </TabGroup>
                     </div>
                 </div>
-                <Chat/>
+                <div className="grow overflow-y-scroll">
+                  <Chat/>
+                </div>
             </div>
         </div>
     )
