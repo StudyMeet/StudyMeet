@@ -11,3 +11,19 @@
         @apply px-3 py-1.5 rounded-md dark:text-gray-400
     }
 }
+
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-gray-700 rounded-lg 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-900 rounded-lg
+}

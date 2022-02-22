@@ -5,7 +5,7 @@ import { ChatField } from '../ChatField';
 export function Chat() {
   return (
     <div className="flex flex-col grow overflow-hidden" >
-      <div className="space-y-3 overflow-y-auto">
+      <div className="space-y-3 mx-2 my-2 overflow-y-auto">
         <ChatMessage
           message={{
             user: {
