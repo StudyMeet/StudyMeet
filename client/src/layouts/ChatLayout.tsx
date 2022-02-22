@@ -23,9 +23,7 @@ export function ChatLayout({ children }: PropsWithChildren<Props>) {
                         </TabGroup>
                     </div>
                 </div>
-                <div className="grow overflow-y-scroll">
-                  <Chat/>
-                </div>
+                <Chat/>
             </div>
         </div>
     )
