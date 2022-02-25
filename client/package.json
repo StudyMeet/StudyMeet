@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "@fakerjs/faker": "^2.1.0",
+    "@svgr/webpack": "^6.2.1",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "casual": "^1.6.2",

@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
@@ -24,6 +23,10 @@ module.exports = [
           test: /\.css$/i,
           use: ["style-loader", "css-loader", "postcss-loader"],
         },
+        {
+					test: /\.svg/,
+					use: ['@svgr/webpack']
+				},
       ],
     },
     resolve: {
