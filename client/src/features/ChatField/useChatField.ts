@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 
 
-export function useChatField() {
+export function useChatField(sendMessage: (content: string) => void) {
     const [text, setText] = useState("");
 
-    const sendMessage = () => {
-        console.log("Sending message: " + text)
-        // make request
+    const send = () => {
+        sendMessage(text);
         setText("");
     }
 
     const onSendClick = (_: React.MouseEvent) => {
-        sendMessage();
+        send();
     }
 
     const onSendKeyPress = (event: React.KeyboardEvent) => {
         if (event.key === 'Enter' && !event.shiftKey) { 
             event.preventDefault();
-            sendMessage();
+            send();
         };
     }
 
