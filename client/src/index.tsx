@@ -1,5 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.css';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<div className="btn">hi</div>, document.querySelector('#root'));
+import './styles.css';
+import { store } from './store';
+import WhiteboardTest from './pages/WhiteboardTest';
+
+
+ReactDOM.render(
+  <Provider store={store}>
+    <WhiteboardTest />
+  </Provider>,
+  document.querySelector('#root')
+);
