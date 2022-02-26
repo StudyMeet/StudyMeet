@@ -21,7 +21,7 @@ export function UIChatMessage({ message }: Props) {
 
     return (
         <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='flex w-full py-3 px-5 hover:dark:bg-gray-900/25 rounded-md'>
-            <div className='w-10 mr-3 cursor-pointer'>
+            <div className='w-10 mr-3 cursor-pointer flex-none'>
                 <Avatar avatarLocation={message.user.avatarLocation}/>
             </div>
             <div className='text-sm cursor-default text-black dark:text-white'>
@@ -29,7 +29,7 @@ export function UIChatMessage({ message }: Props) {
                     <p className='font-medium text-md hover:underline cursor-pointer'>{`${message.user.firstName} ${message.user.lastName}`}</p>
                     <p className='text-xs text-gray-800 dark:text-gray-300'>{timeOnDay(message.timestamp)}</p>
                 </div>
-                <div className='cursor-auto'>
+                <div className='cursor-auto break-words'>
                     {message.content}
                 </div>
             </div>

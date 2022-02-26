@@ -7,7 +7,7 @@
       "types": ["node", "jest"],
       "sourceMap": true,
       "outDir": "./dist",
-      "moduleResolution": "node",
+      "moduleResolution": "Node",
       "removeComments": true,
       "noImplicitAny": true,
       "strictNullChecks": true,
