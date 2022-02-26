@@ -1,7 +1,25 @@
+import React, { useState } from "react";
+
+
 export function useChatField() {
-    const onSendClick = () => {
-        console.log("Message sent");
+    const [text, setText] = useState("");
+
+    const sendMessage = () => {
+        console.log("Sending message: " + text)
+        // make request
+        setText("");
     }
 
-    return { onSendClick };
+    const onSendClick = (_: React.MouseEvent) => {
+        sendMessage();
+    }
+
+    const onSendKeyPress = (event: React.KeyboardEvent) => {
+        if (event.key === 'Enter' && !event.shiftKey) { 
+            event.preventDefault();
+            sendMessage();
+        };
+    }
+
+    return { text, setText, onSendClick, onSendKeyPress };
 }
