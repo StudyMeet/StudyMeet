@@ -29,7 +29,7 @@ export function UIChatMessage({ message }: Props) {
                     <p className='font-medium text-md hover:underline cursor-pointer'>{`${message.user.firstName} ${message.user.lastName}`}</p>
                     <p className='text-xs text-gray-800 dark:text-gray-300'>{timeOnDay(message.timestamp)}</p>
                 </div>
-                <div className='cursor-auto break-words'>
+                <div className='cursor-auto break-words overflow-x-hidden'>
                     {message.content}
                 </div>
             </div>
