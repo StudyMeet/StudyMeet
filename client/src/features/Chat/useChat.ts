@@ -17,6 +17,7 @@ export function useChat() {
     const [messages, dispatchMessage] = useReducer(reducer, []); 
 
     const sendMessage = (content: string) => {
+        if (content === "") return;
         dispatchMessage({
             type: 'SEND_MESSAGE',
             payload: {
