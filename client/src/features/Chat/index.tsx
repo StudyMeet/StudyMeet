@@ -27,7 +27,7 @@ export function Chat() {
 
   return (
     <div className="flex flex-col justify-between grow h-full overflow-hidden max-h-full">
-      <div className={`${!detached && 'invisible'} flex items-center align-middle p-0.5 font-bold text-xs w-full bg-red-500 text-white justify-between`}>
+      <div className={`${!detached && 'invisible'} flex items-center align-middle px-1.5 py-0.5 font-bold text-xs w-full bg-red-500 text-white justify-between`}>
         <p onClick={ onNewMessageBannerClicked } className='grow cursor-pointer'>New messages</p>
         <button className='inline-flex space-x-1 items-center'>
           <p className='font-bold'>Mark as Read</p>
