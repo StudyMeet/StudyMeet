@@ -15,8 +15,8 @@ export function UIChatField({ onSendClick, onSendKeyPress, text, setText }: Prop
   };
 
   return (
-    <div className="mx-4 mb-4">
-      <div className="flex w-full p-1.5 bg-gray-700 rounded-lg text-gray-400 justify-between">
+    <div className="mx-4 mb-4 flex-none ">
+      <div className="flex w-full p-1.5 bg-gray-700 rounded-lg text-gray-400 justify-between ">
         <TextareaAutosize 
             value={text}
             onChange={onChange}

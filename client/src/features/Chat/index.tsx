@@ -7,8 +7,8 @@ export function Chat() {
   const { messages, sendMessage } = useChat();  
 
   return (
-    <div className="flex flex-col justify-between grow" >
-      <div className="space-y-3 mx-2 my-2 overflow-y-auto flex-grow overflow-hidden">
+    <div className="flex flex-col justify-between grow h-full overflow-hidden max-h-full">
+      <div className="space-y-3 mx-2 my-2 overflow-y-auto grow overflow-x-hidden h-full">
         { messages.map((m, i) => <ChatMessage message={m} key={i}/> )}
       </div>
       <ChatField sendMessage={sendMessage} />
