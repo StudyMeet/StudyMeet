@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Message } from '../../types';
 import { Avatar } from '../../components/Avatar';
 import { timeOnDay } from '../../utils/time-on-day';
 import { ChatMessageMenu } from '../ChatMessageMenu'
+import { useIntersection } from '@hooks';
 
 interface Props {
     message: Message;
+    markAsRead: (timestamp: Date) => void;
 }
 
-export function UIChatMessage({ message }: Props) {
+export function UIChatMessage({ message, markAsRead }: Props) {
     const [hover, setHover] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+    const inViewport = useIntersection(ref, '0px');
+
+    useEffect(() => {
+        if (inViewport) markAsRead(message.timestamp);
+    }, [inViewport])
 
     const onMouseEnter = () => {
         setHover(true);
@@ -20,7 +28,7 @@ export function UIChatMessage({ message }: Props) {
     }
 
     return (
-        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='flex w-full py-3 px-5 hover:dark:bg-gray-900/25 rounded-md'>
+        <div ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='flex w-full py-3 px-5 hover:dark:bg-gray-900/25 rounded-md'>
             <div className='w-10 mr-3 cursor-pointer flex-none'>
                 <Avatar avatarLocation={message.user.avatarLocation}/>
             </div>

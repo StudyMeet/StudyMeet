@@ -4,10 +4,11 @@ import { UIChatMessage } from './UIChatMessage';
 
 interface Props {
     message: Message               
+    markAsRead: (timestamp: Date) => void;
 }
 
-export function ChatMessage({ message }: Props) {
+export function ChatMessage({ message, markAsRead }: Props) {
     return (
-        <UIChatMessage message={message} />
+        <UIChatMessage markAsRead={markAsRead} message={message} />
     );
 }
