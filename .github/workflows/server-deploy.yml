@@ -25,7 +25,7 @@ jobs:
       uses: actions/setup-node@v3
     
     - name: Install Dependencies
-      run: yarn install ./server
+      run: yarn add ./server
     
     - name: Build Server
       run: yarn dist ./server
