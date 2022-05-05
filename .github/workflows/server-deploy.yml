@@ -13,6 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: ./server
 
     strategy:
       matrix:
@@ -26,7 +29,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-        cache-dependency-path: server/yarn-lock.json
+        cache-dependency-path: ./yarn-lock.json
     - run: cd server
     - run: yarn install
     - run: yarn dist
