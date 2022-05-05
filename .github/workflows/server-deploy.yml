@@ -29,13 +29,13 @@ jobs:
         cache-dependency-path: ./server/yarn-lock.json
         
     - name: Change Directory to Server
-    - run: cd server
+      run: cd server
     
     - name: Install Dependencies
-    - run: yarn install
+      run: yarn install
     
     - name: Build Server
-    - run: yarn dist
+      run: yarn dist
     
     - name: Run Tests
-    - run: yarn test --if-present
+      run: yarn test --if-present
