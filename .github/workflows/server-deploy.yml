@@ -23,15 +23,12 @@ jobs:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
-        
-    - name: Change Directory to Server
-      run: cd server
     
     - name: Install Dependencies
-      run: yarn install
+      run: yarn install ./server
     
     - name: Build Server
-      run: yarn dist
+      run: yarn dist ./server
     
     - name: Run Tests
-      run: yarn test --if-present
+      run: yarn test --if-present ./server
