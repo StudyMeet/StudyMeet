@@ -40,4 +40,4 @@ jobs:
     - name: Run Server
       run: |
         cd ./server
-        yarn start
+        yarn start &
