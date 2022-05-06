@@ -27,7 +27,7 @@ jobs:
     - name: Install Dependencies
       run: |
         cd ./server
-        yarn add
+        yarn
     
     - name: Build Server
       run: |
