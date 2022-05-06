@@ -33,8 +33,3 @@ jobs:
       run: |
         cd ./server
         yarn dist
-    
-    - name: Run Tests
-      run: |
-        cd ./server
-        yarn test --if-present
