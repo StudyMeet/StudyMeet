@@ -36,3 +36,8 @@ jobs:
       run: |
         cd ./server
         yarn dist
+        
+    - name: Run Server
+      run: |
+        cd ./server
+        yarn start
