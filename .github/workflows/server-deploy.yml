@@ -25,10 +25,16 @@ jobs:
       uses: actions/setup-node@v3
     
     - name: Install Dependencies
-      run: cd ./server && yarn add
+      run: |
+        cd ./server
+        yarn add
     
     - name: Build Server
-      run: cd ./server && yarn dist
+      run: |
+        cd ./server
+        yarn dist
     
     - name: Run Tests
-      run: cd ./server && yarn test --if-present ./server
+      run: |
+        cd ./server
+        yarn test --if-present
